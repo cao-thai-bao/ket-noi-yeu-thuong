@@ -1,8 +1,13 @@
 /* common css  */
 * {
   margin: 0;
-
   font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 h1,
@@ -328,4 +333,215 @@ footer {
   color: white;
   font-size: 18px;
   margin-bottom: 20px;
+}
+
+/* Donate Form Styles */
+.donate-form-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 40px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.donate-form-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+  font-size: 2rem;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #34495e;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.donation-amounts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.amount-btn {
+  padding: 10px;
+  border: 2px solid #e0e0e0;
+  background: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 600;
+}
+
+.amount-btn:hover,
+.amount-btn.active {
+  background: #3498db;
+  color: white;
+  border-color: #3498db;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 15px;
+  background: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-submit:hover {
+  background: #229954;
+}
+
+.required {
+  color: #e74c3c;
+}
+
+/* Media Queries for Mobile Responsive */
+@media (max-width: 768px) {
+  /* Banner adjustments */
+  .banner-container {
+    flex-direction: column;
+    margin: 50px 0;
+    text-align: center;
+    background-position: center bottom;
+  }
+
+  .banner-description {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 40px;
+  }
+
+  .banner-image {
+    padding-right: 0;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .banner-title {
+    font-size: 36px;
+  }
+
+  .banner-button {
+    margin-left: 0;
+    margin-top: 15px;
+    display: block;
+    width: 100%;
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+
+  /* Donate Today section */
+  .donate-today {
+    width: 90%;
+    margin: 60px auto;
+  }
+
+  .donation-box-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Donation Plan section */
+  .donation-plan {
+    margin: 0 20px;
+  }
+
+  .plan-container {
+    flex-direction: column;
+  }
+
+  .donation-plan-title {
+    font-size: 32px;
+  }
+
+  /* Article sections */
+  .article {
+    margin: 60px 20px;
+  }
+
+  .article-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .article-container:nth-child(even) {
+    flex-direction: column;
+  }
+
+  /* Specific fix for section 2 where image was before description */
+  section.article:nth-of-type(2) .article-container {
+    flex-direction: column-reverse;
+  }
+
+  .article-title {
+    font-size: 32px;
+  }
+
+  .article-image {
+    margin-top: 30px;
+  }
+
+  /* Subscribe section */
+  .subscribe {
+    margin: 0 20px;
+  }
+
+  .subscribe-box {
+    padding: 40px 20px;
+  }
+
+  .subscribe-field {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  /* Footer adjustments */
+  footer {
+    padding: 40px 20px;
+    height: auto;
+  }
+
+  .footer-title {
+    font-size: 28px;
+  }
+
+  /* Donate form adjustments */
+  .donate-form-container {
+    padding: 20px;
+    margin: 20px auto;
+    width: 95%;
+  }
+
+  .donate-form-title {
+    font-size: 1.5rem;
+  }
 }
