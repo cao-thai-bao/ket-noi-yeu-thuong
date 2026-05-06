@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- website fav-icon  -->
+    <link rel="shortcut icon" href="images/fav-icon.jpg" type="image/x-icon" />
+    <!-- website title  -->
+    <title>Cảm Ơn Bạn - Kết Nối Yêu Thương</title>
+    <!-- google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Lobster&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font awesome  -->
+    <script
+      src="https://kit.fontawesome.com/f1a11fb0ce.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .thankyou-container {
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 40px 20px;
+        background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+      }
+
+      .thankyou-card {
+        background: white;
+        padding: 60px 40px;
+        border-radius: 30px;
+        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.05);
+        max-width: 700px;
+        width: 100%;
+      }
+
+      .thankyou-icon {
+        font-size: 5rem;
+        margin-bottom: 20px;
+      }
+
+      .thankyou-title {
+        font-size: 2.5rem;
+        color: #2d6a4f;
+        margin-bottom: 20px;
+        font-family: 'Lobster', cursive;
+      }
+
+      .thankyou-text {
+        font-size: 1.1rem;
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: 40px;
+      }
+
+      .thankyou-actions {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn-home {
+        background: #E8956D;
+        color: white;
+        padding: 15px 35px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: all 0.3s ease;
+      }
+
+      .btn-home:hover {
+        background: #d67d54;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(232, 149, 109, 0.3);
+      }
+
+      .btn-share {
+        background: white;
+        color: #2d6a4f;
+        padding: 15px 35px;
+        border: 2px solid #2d6a4f;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: all 0.3s ease;
+      }
+
+      .btn-share:hover {
+        background: #f0fdf4;
+        transform: translateY(-3px);
+      }
+
+      .social-links {
+        margin-top: 40px;
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+      }
+
+      .social-icon {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: #f0fdf4;
+        color: #2d6a4f;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+      }
+
+      .social-icon:hover {
+        background: #2d6a4f;
+        color: white;
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- header start  -->
+    <header>
+      <div class="banner-container" style="padding: 20px 10%; margin: 0 auto; max-width: 1400px;">
+        <h4 style="font-family: 'Lobster', cursive; font-size: 1.8rem; color: #2d6a4f;">Kết Nối Yêu Thương</h4>
+      </div>
+    </header>
+
+    <main class="thankyou-container">
+      <div class="thankyou-card">
+        <div class="thankyou-icon">❤️</div>
+        <h1 class="thankyou-title">Cảm Ơn Bạn!</h1>
+        <p class="thankyou-text">
+          Sự tử tế của bạn là nguồn động lực vô giá để chúng tôi tiếp tục hành trình lan tỏa yêu thương. 
+          Đóng góp của bạn sẽ trực tiếp giúp đỡ những trẻ em khó khăn, người già neo đơn và người khuyết tật vượt qua nghịch cảnh.
+        </p>
+        <div class="thankyou-actions">
+          <a href="index.html" class="btn-home">Quay lại Trang chủ</a>
+          <a href="about.html" class="btn-share">Tìm hiểu thêm chiến dịch</a>
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+    </main>
+
+    <!-- footer start  -->
+    <footer style="margin-top: 0;">
+      <h4 class="footer-title">Kết Nối Yêu Thương</h4>
+      <p class="footer-subtitle">Chúng tôi đồng hành cùng bạn trên mọi nẻo đường thiện nguyện.</p>
+      <p class="footer-subtitle">
+        <i class="fa-solid fa-copyright"></i> 2026 Chiến dịch 'Kết nối yêu thương'. Đã đăng ký bản quyền.
+      </p>
+    </footer>
+  </body>
+</html>

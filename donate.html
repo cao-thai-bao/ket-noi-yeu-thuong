@@ -40,16 +40,16 @@
             referrentur, at eam falli deterruisset. No duo populo
           </p>
           <p class="banner-subtitle text-primary line-break-2">
-            animal noluisse, enim
+            kém may mắn trong cuộc sống.
           </p>
-          <button class="btn-primary">Ủng Hộ Ngay</button>
-          <button class="banner-button">
-            <i class="fa-solid fa-play"></i> Xem Video
-          </button>
+          <div class="banner-buttons">
+            <a href="index.html"><button class="btn-primary">Trang Chủ</button></a>
+            <a href="about.html"><button class="banner-button">Về Chúng Tôi</button></a>
+          </div>
         </div>
         <div class="banner-image">
           <img
-            src="images/header-person.png"
+            src="images/anh_dai_dien.png"
             alt="Header banner one man standing with donation box with smile"
           />
         </div>
@@ -59,7 +59,7 @@
     <!-- main start  -->
     <main>
       <div class="donate-form-container">
-        <h2 class="donate-form-title">Form Đóng Góp</h2>
+        <h2 class="donate-form-title">Đóng Góp</h2>
         
         <form action="https://formspree.io/f/xrejkwgz" method="POST" id="donateForm">
           <div class="form-group">
@@ -153,6 +153,27 @@
       </p>
     </footer>
 
+    <!-- Thank You Popup -->
+    <div id="thankYouOverlay" style="display:none;"> 
+      <div id="thankYouPopup"> 
+        <div class="popup-icon">🎉</div> 
+        <h2 class="popup-title">Cảm Ơn Bạn Rất Nhiều!</h2> 
+        <p class="popup-sub">Đóng góp của bạn đã được ghi nhận thành công.</p> 
+        <p class="popup-msg"> 
+          Mỗi đóng góp dù nhỏ đều là một nhịp cầu yêu thương.<br/> 
+          Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất. 💚 
+        </p> 
+        <div class="popup-redirect"> 
+          Tự động chuyển sang trang cảm ơn sau 
+          <span id="countDown">3</span> giây... 
+        </div> 
+        <button onclick="goToThankYou()" class="popup-btn"> 
+          Xem trang cảm ơn ngay → 
+        </button> 
+      </div> 
+      <canvas id="confettiCanvas"></canvas> 
+    </div> 
+
     <script>
       // Xử lý chọn số tiền
       const amountButtons = document.querySelectorAll('.amount-btn');
@@ -192,20 +213,11 @@
         })
         .then(response => {
           if (response.ok) {
-            // Hiển thị thông báo thành công
-            Swal.fire({
-              title: 'Cảm ơn bạn!',
-              text: 'Đóng góp của bạn đã được gửi thành công. Chúng tôi sẽ liên hệ với bạn sớm nhất.',
-              icon: 'success',
-              confirmButtonText: 'Đóng',
-              confirmButtonColor: '#27ae60'
-            }).then((result) => {
-              if (result.isConfirmed) {
-                // Reset form sau khi đóng thông báo
-                this.reset();
-                amountButtons.forEach(b => b.classList.remove('active'));
-              }
-            });
+            // Hiển thị popup tùy chỉnh mới
+            showThankYouPopup();
+            // Reset form
+            this.reset();
+            amountButtons.forEach(b => b.classList.remove('active'));
           } else {
             throw new Error('Gửi thất bại');
           }
@@ -221,6 +233,67 @@
           });
         });
       });
+
+      function showThankYouPopup() { 
+        document.getElementById('thankYouOverlay').style.display = 'flex'; 
+        startConfetti(); 
+        
+        // Đếm ngược 3 giây 
+        let count = 3; 
+        const cd = document.getElementById('countDown'); 
+        const timer = setInterval(() => { 
+          count--; 
+          cd.textContent = count; 
+          if (count <= 0) { 
+            clearInterval(timer); 
+            goToThankYou(); 
+          } 
+        }, 1000); 
+      } 
+      
+      function goToThankYou() { 
+        window.location.href = 'thankyou.html'; 
+      } 
+      
+      // Confetti đơn giản không cần thư viện 
+      function startConfetti() { 
+        const canvas = document.getElementById('confettiCanvas'); 
+        const ctx = canvas.getContext('2d'); 
+        canvas.width = window.innerWidth; 
+        canvas.height = window.innerHeight; 
+      
+        const colors = ['#52b788','#E8956D','#f6c90e','#b7e4c7','#ff6b6b','#fff']; 
+        const pieces = [];
+        for (let i = 0; i < 150; i++) {
+          pieces.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height - canvas.height,
+            size: Math.random() * 10 + 5,
+            color: colors[Math.floor(Math.random() * colors.length)],
+            speed: Math.random() * 3 + 2,
+            rotation: Math.random() * 360,
+            rotationSpeed: Math.random() * 10 - 5
+          });
+        }
+
+        function update() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          pieces.forEach(p => {
+            p.y += p.speed;
+            p.rotation += p.rotationSpeed;
+            if (p.y > canvas.height) p.y = -20;
+            
+            ctx.save();
+            ctx.translate(p.x, p.y);
+            ctx.rotate(p.rotation * Math.PI / 180);
+            ctx.fillStyle = p.color;
+            ctx.fillRect(-p.size/2, -p.size/2, p.size, p.size);
+            ctx.restore();
+          });
+          requestAnimationFrame(update);
+        }
+        update();
+      }
     </script>
   </body>
 </html>
