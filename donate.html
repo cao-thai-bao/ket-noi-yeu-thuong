@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- website fav-icon  -->
+    <link rel="shortcut icon" href="images/fav-icon.jpg" type="image/x-icon" />
+    <!-- website title  -->
+    <title>Ủng Hộ Ngay</title>
+    <!-- google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Lobster&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font awesome  -->
+    <script
+      src="https://kit.fontawesome.com/f1a11fb0ce.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .donate-form-container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 40px;
+        background: #f8f9fa;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      }
+      
+      .donate-form-title {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #2c3e50;
+        font-size: 2rem;
+      }
+      
+      .form-group {
+        margin-bottom: 20px;
+      }
+      
+      .form-label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #34495e;
+      }
+      
+      .form-control {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #e0e0e0;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: border-color 0.3s;
+      }
+      
+      .form-control:focus {
+        outline: none;
+        border-color: #3498db;
+      }
+      
+      .donation-amounts {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+      
+      .amount-btn {
+        padding: 10px;
+        border: 2px solid #e0e0e0;
+        background: white;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-weight: 600;
+      }
+      
+      .amount-btn:hover, .amount-btn.active {
+        background: #3498db;
+        color: white;
+        border-color: #3498db;
+      }
+      
+      .btn-submit {
+        width: 100%;
+        padding: 15px;
+        background: #27ae60;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      
+      .btn-submit:hover {
+        background: #229954;
+      }
+      
+      .required {
+        color: #e74c3c;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- header start  -->
+    <header>
+      <div class="banner-container">
+        <div class="banner-description">
+          <h1 class="banner-title">Cùng Hỗ Trợ</h1>
+          <h1 class="banner-title">Những Người</h1>
+          <h1 class="banner-title line-break-1">Cần Giúp Đỡ Hơn</h1>
+          <p class="banner-subtitle text-primary">
+            Lorem ipsum dolor sit amet, usu cu esse possit
+          </p>
+          <p class="banner-subtitle text-primary">
+            referrentur, at eam falli deterruisset. No duo populo
+          </p>
+          <p class="banner-subtitle text-primary line-break-2">
+            animal noluisse, enim
+          </p>
+          <button class="btn-primary">Ủng Hộ Ngay</button>
+          <button class="banner-button">
+            <i class="fa-solid fa-play"></i> Xem Video
+          </button>
+        </div>
+        <div class="banner-image">
+          <img
+            src="images/header-person.png"
+            alt="Header banner one man standing with donation box with smile"
+          />
+        </div>
+      </div>
+    </header>
+
+    <!-- main start  -->
+    <main>
+      <div class="donate-form-container">
+        <h2 class="donate-form-title">Form Đóng Góp</h2>
+        
+        <form action="https://formspree.io/f/xrejkwgz" method="POST" id="donateForm">
+          <div class="form-group">
+            <label class="form-label">
+              Họ tên <span class="required">*</span>
+            </label>
+            <input 
+              type="text" 
+              name="full_name" 
+              class="form-control" 
+              required
+              placeholder="Nhập họ và tên của bạn"
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input 
+              type="email" 
+              name="email" 
+              class="form-control"
+              placeholder="Nhập email của bạn"
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Nghề nghiệp</label>
+            <input 
+              type="text" 
+              name="job" 
+              class="form-control"
+              placeholder="Nhập nghề nghiệp của bạn"
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">
+              Số điện thoại/Zalo <span class="required">*</span>
+            </label>
+            <input 
+              type="tel" 
+              name="contact" 
+              class="form-control" 
+              required
+              placeholder="Nhập số điện thoại hoặc Zalo"
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Số tiền muốn đóng góp</label>
+            <div class="donation-amounts">
+              <button type="button" class="amount-btn" data-amount="100000">100.000đ</button>
+              <button type="button" class="amount-btn" data-amount="200000">200.000đ</button>
+              <button type="button" class="amount-btn" data-amount="500000">500.000đ</button>
+              <button type="button" class="amount-btn" data-amount="1000000">1.000.000đ</button>
+              <button type="button" class="amount-btn" data-amount="5000000">5.000.000đ</button>
+            </div>
+            <input 
+              type="number" 
+              name="amount" 
+              class="form-control" 
+              id="customAmount"
+              placeholder="Nhập số tiền khác (VNĐ)"
+              min="1000"
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Lời nhắn</label>
+            <textarea 
+              name="message" 
+              class="form-control" 
+              rows="4"
+              placeholder="Nhập lời nhắn của bạn (nếu có)"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">
+            Gửi Đóng Góp
+          </button>
+        </form>
+      </div>
+    </main>
+
+    <!-- footer start  -->
+    <footer>
+      <h4 class="footer-title">Sống Khiêm Tốn</h4>
+      <p class="footer-subtitle">Chúng ta sẽ làm được.</p>
+      <p class="footer-subtitle">
+        <i class="fa-solid fa-copyright"></i> 2023 Ủng Hộ Ngay. Đã đăng ký bản quyền.
+      </p>
+    </footer>
+
+    <script>
+      // Xử lý chọn số tiền
+      const amountButtons = document.querySelectorAll('.amount-btn');
+      const customAmountInput = document.getElementById('customAmount');
+      
+      amountButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          // Xóa class active khỏi tất cả các nút
+          amountButtons.forEach(b => b.classList.remove('active'));
+          // Thêm class active vào nút được chọn
+          this.classList.add('active');
+          // Điền số tiền vào input
+          customAmountInput.value = this.dataset.amount;
+        });
+      });
+      
+      // Khi người dùng nhập vào input custom, xóa class active
+      customAmountInput.addEventListener('input', function() {
+        amountButtons.forEach(b => b.classList.remove('active'));
+      });
+
+      // Xử lý submit form với SweetAlert2
+      document.getElementById('donateForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Lấy dữ liệu form
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData);
+        
+        // Gửi dữ liệu đến Formspree
+        fetch(this.action, {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json'
+          },
+          body: formData
+        })
+        .then(response => {
+          if (response.ok) {
+            // Hiển thị thông báo thành công
+            Swal.fire({
+              title: 'Cảm ơn bạn!',
+              text: 'Đóng góp của bạn đã được gửi thành công. Chúng tôi sẽ liên hệ với bạn sớm nhất.',
+              icon: 'success',
+              confirmButtonText: 'Đóng',
+              confirmButtonColor: '#27ae60'
+            }).then((result) => {
+              if (result.isConfirmed) {
+                // Reset form sau khi đóng thông báo
+                this.reset();
+                amountButtons.forEach(b => b.classList.remove('active'));
+              }
+            });
+          } else {
+            throw new Error('Gửi thất bại');
+          }
+        })
+        .catch(error => {
+          // Hiển thị thông báo lỗi
+          Swal.fire({
+            title: 'Lỗi!',
+            text: 'Có lỗi xảy ra khi gửi form. Vui lòng thử lại sau.',
+            icon: 'error',
+            confirmButtonText: 'Đóng',
+            confirmButtonColor: '#e74c3c'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
