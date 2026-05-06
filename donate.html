@@ -30,24 +30,20 @@
     <header>
       <div class="banner-container">
         <div class="banner-description">
-          <h1 class="banner-title">Cùng Hỗ Trợ</h1>
-          <h1 class="banner-title">Những Người</h1>
-          <h1 class="banner-title line-break-1">Cần Giúp Đỡ Hơn</h1>
-          <p class="banner-subtitle text-primary">
-            Lorem ipsum dolor sit amet, usu cu esse possit
-          </p>
-          <p class="banner-subtitle text-primary">
-            referrentur, at eam falli deterruisset. No duo populo
-          </p>
+          <h1 class="banner-title line-break-1">Chung Tay Hôm Nay</h1>
           <p class="banner-subtitle text-primary line-break-2">
-            kém may mắn trong cuộc sống.
+            Chỉ cần một cuốn sách, một bộ quần áo, hay một lời chia sẻ – bạn đã tạo ra sự khác biệt thật sự cho ai đó hôm nay.
           </p>
           <div class="banner-buttons">
-            <a href="index.html"><button class="btn-primary">Trang Chủ</button></a>
-            <a href="about.html"><button class="banner-button">Về Chúng Tôi</button></a>
+            <a href="#donate-form" class="btn-primary" 
+               style="display:inline-block; padding: 14px 36px; 
+               border-radius: 50px; font-weight: 700; font-size: 1rem; 
+               text-decoration: none;"> 
+              💛 Đóng Góp Ngay ↓ 
+            </a>
           </div>
         </div>
-        <div class="banner-image">
+        <div class="banner-image hero-image">
           <img
             src="images/anh_dai_dien.png"
             alt="Header banner one man standing with donation box with smile"
@@ -61,10 +57,10 @@
       <div class="donate-form-container">
         <h2 class="donate-form-title">Đóng Góp</h2>
         
-        <form action="https://formspree.io/f/xrejkwgz" method="POST" id="donateForm">
+        <form action="https://formspree.io/f/xrejkwgz" method="POST" id="donate-form">
           <div class="form-group">
             <label class="form-label">
-              Họ tên <span class="required">*</span>
+              👤 Họ và tên <span class="required">*</span>
             </label>
             <input 
               type="text" 
@@ -76,7 +72,7 @@
           </div>
 
           <div class="form-group">
-            <label class="form-label">Email</label>
+            <label class="form-label">📧 Email</label>
             <input 
               type="email" 
               name="email" 
@@ -86,7 +82,7 @@
           </div>
 
           <div class="form-group">
-            <label class="form-label">Nghề nghiệp</label>
+            <label class="form-label">💼 Nghề nghiệp</label>
             <input 
               type="text" 
               name="job" 
@@ -97,49 +93,48 @@
 
           <div class="form-group">
             <label class="form-label">
-              Số điện thoại/Zalo <span class="required">*</span>
+              📱 Số điện thoại / Zalo <span class="required">*</span>
             </label>
             <input 
               type="tel" 
-              name="contact" 
+              name="phone" 
               class="form-control" 
               required
-              placeholder="Nhập số điện thoại hoặc Zalo"
+              placeholder="Nhập số điện thoại của bạn"
             />
           </div>
 
           <div class="form-group">
-            <label class="form-label">Số tiền muốn đóng góp</label>
+            <label class="form-label">
+              💰 Số tiền muốn đóng góp <span class="required">*</span>
+            </label>
             <div class="donation-amounts">
-              <button type="button" class="amount-btn" data-amount="100000">100.000đ</button>
-              <button type="button" class="amount-btn" data-amount="200000">200.000đ</button>
-              <button type="button" class="amount-btn" data-amount="500000">500.000đ</button>
-              <button type="button" class="amount-btn" data-amount="1000000">1.000.000đ</button>
-              <button type="button" class="amount-btn" data-amount="5000000">5.000.000đ</button>
+              <button type="button" class="amount-btn" data-amount="100000">100,000đ</button>
+              <button type="button" class="amount-btn" data-amount="200000">200,000đ</button>
+              <button type="button" class="amount-btn" data-amount="500000">500,000đ</button>
+              <button type="button" class="amount-btn" data-amount="1000000">1,000,000đ</button>
             </div>
             <input 
               type="number" 
               name="amount" 
+              id="customAmount" 
               class="form-control" 
-              id="customAmount"
+              required
               placeholder="Nhập số tiền khác (VNĐ)"
-              min="1000"
             />
           </div>
 
           <div class="form-group">
-            <label class="form-label">Lời nhắn</label>
+            <label class="form-label">💬 Lời nhắn (nếu có)</label>
             <textarea 
               name="message" 
               class="form-control" 
               rows="4"
-              placeholder="Nhập lời nhắn của bạn (nếu có)"
+              placeholder="Nhập lời nhắn của bạn đến chiến dịch"
             ></textarea>
           </div>
 
-          <button type="submit" class="btn-submit">
-            Gửi Đóng Góp
-          </button>
+          <button type="submit" class="btn-submit">Gửi đóng góp</button>
         </form>
       </div>
     </main>
