@@ -1,4 +1,8 @@
 /* common css  */
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -86,9 +90,30 @@ h2 {
   justify-content: center;
 }
 
+.hero-image img,
+.banner-image img { 
+  width: 100%; 
+  height: auto; 
+  max-height: 500px;
+  object-fit: contain; 
+  object-position: center; 
+  border-radius: 16px; 
+  box-shadow: 0 12px 32px rgba(0,0,0,0.15); 
+}
+
 .banner-title {
   font-weight: 700;
   margin-bottom: 5px;
+  font-size: clamp(2.2rem, 4vw, 3.8rem); 
+  white-space: nowrap; 
+  line-height: 1.2;
+}
+
+@media (max-width: 600px) { 
+  .banner-title { 
+    white-space: normal; 
+    font-size: 1.9rem; 
+  } 
 }
 
 .line-break-1 {
@@ -384,9 +409,10 @@ footer {
   max-width: 600px;
   margin: 50px auto;
   padding: 40px;
-  background: #f8f9fa;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(145deg, #ffffff, #f9fffe); 
+  border-radius: 20px; 
+  box-shadow: 0 8px 40px rgba(0,0,0,0.08); 
+  border: 1px solid #e8f5e9;
 }
 
 .donate-form-title {
@@ -404,7 +430,8 @@ footer {
   display: block;
   margin-bottom: 8px;
   font-weight: 600;
-  color: #34495e;
+  color: #2d6a4f; 
+  font-size: 0.92rem;
 }
 
 .form-control {
@@ -418,7 +445,9 @@ footer {
 
 .form-control:focus {
   outline: none;
-  border-color: #3498db;
+  border-color: #52b788; 
+  box-shadow: 0 0 0 3px rgba(82,183,136,0.15); 
+  transition: all 0.2s;
 }
 
 .donation-amounts {
@@ -429,37 +458,43 @@ footer {
 }
 
 .amount-btn {
-  padding: 10px;
-  border: 2px solid #e0e0e0;
-  background: white;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s;
+  padding: 8px 18px; 
+  border: 2px solid #52b788; 
+  background: white; 
+  color: #2d6a4f; 
+  border-radius: 50px; 
+  cursor: pointer; 
+  transition: all 0.2s; 
   font-weight: 600;
+  font-size: 0.9rem;
 }
 
 .amount-btn:hover,
 .amount-btn.active {
-  background: #3498db;
-  color: white;
-  border-color: #3498db;
+  background: #52b788; 
+  color: white; 
+  transform: scale(1.05);
+  border-color: #52b788;
 }
 
 .btn-submit {
   width: 100%;
-  padding: 15px;
-  background: #27ae60;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 18px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s;
+  padding: 16px; 
+  background: linear-gradient(135deg, #52b788, #2d6a4f); 
+  color: white; 
+  border: none; 
+  border-radius: 50px; 
+  font-size: 1.1rem; 
+  font-weight: 700; 
+  cursor: pointer; 
+  transition: transform 0.2s, box-shadow 0.2s; 
+  letter-spacing: 0.5px;
+  margin-top: 8px;
 }
 
 .btn-submit:hover {
-  background: #229954;
+  transform: translateY(-2px); 
+  box-shadow: 0 10px 28px rgba(82,183,136,0.4);
 }
 
 .required {
@@ -1234,10 +1269,6 @@ footer {
 
   .banner-description {
     margin-bottom: 40px;
-  }
-
-  .banner-title {
-    font-size: 36px;
   }
 
   .banner-button {
