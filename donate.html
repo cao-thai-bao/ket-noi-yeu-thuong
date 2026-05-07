@@ -58,6 +58,9 @@
         <h2 class="donate-form-title">Đóng Góp</h2>
         
         <form action="https://formspree.io/f/xrejkwgz" method="POST" id="donate-form">
+          <!-- Cấu hình redirect dự phòng cho Formspree -->
+          <input type="hidden" name="_next" value="thankyou.html">
+          
           <div class="form-group">
             <label class="form-label">
               👤 Họ và tên <span class="required">*</span>
@@ -191,7 +194,7 @@
       });
 
       // Xử lý submit form với SweetAlert2
-      document.getElementById('donateForm').addEventListener('submit', function(e) {
+      document.getElementById('donate-form').addEventListener('submit', function(e) {
         e.preventDefault();
         
         // Lấy dữ liệu form
